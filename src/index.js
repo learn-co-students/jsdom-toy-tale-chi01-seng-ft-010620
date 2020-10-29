@@ -7,21 +7,25 @@ const toyForm = document.querySelector(".add-toy-form");
 const toysEndpoint = `http://localhost:3000/toys`;
 const toyContainer = document.getElementById("toy-collection");
 
-// On the `index.html` page, there is a `div` with the `id` "toy-collection."
 
-// When the page loads, make a 'GET' request to fetch all the toy objects. With the
-// response data, make a `<div class="card">` for each toy and add it to the
-// toy-collection `div`.
 
-const renderToys = toysArray => {
-  console.log(toysArray);
-  toysArray.forEach(toy => {
-    toyContainer.innerHTML += `<div class="card">
+// DEFINED FUNCTIONS
+
+const renderIndividualToy = toy => {
+  let likeValue = `${toy.likes}`;
+  let ternary = likeValue === "1" ? "Like" : "Likes"
+  toyContainer.innerHTML += `<div class="card" data-id="${toy.id}">
     <h2>${toy.name}</h2>
-    <img src=${toy.image} class="toy-avatar" />
-    <p>${toy.likes} Likes</p>
+    <img src="${toy.image}" class="toy-avatar" />
+    <p>${likeValue} ${ternary}</p>
     <button class="like-btn">Like <3</button>
   </div>`
+}
+
+const renderToys = toysArray => {
+  toyContainer.innerHTML = ``
+  toysArray.forEach(toy => {
+    renderIndividualToy(toy)
   })
 }
 
@@ -34,7 +38,53 @@ const fetchToys = () => {
     .catch(err => console.log(err))
 }
 
+const handlePostToy = e => {
+  e.preventDefault()
+  const formData = {
+    name: e.target["name"].value,
+    image: e.target["image"].value
+  }
+  e.target.reset();
 
+  const reqObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(formData)
+  }
+  fetch(toysEndpoint, reqObj)
+    .then(resp => resp.json())
+    .then(data => {
+      renderIndividualToy(data)
+    })
+    .catch(err => console.log(err))
+}
+
+const handleLikeButton = e => {
+  const toyId = e.target.parentElement.dataset.id;
+  const likeCount = parseInt(e.target.parentElement.children[2].innerText.split(" ")[0])
+  const likeData = {
+    id: toyId,
+    likes: likeCount + 1
+  }
+  const reqObj = {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(likeData)
+  }
+  fetch(toysEndpoint + `/${toyId}`, reqObj)
+    .then(resp => resp.json())
+    .then(data => {
+      fetchToys()
+    })
+    .catch(err => console.log(err))
+
+}
 
 
 
@@ -53,4 +103,10 @@ addBtn.addEventListener("click", () => {
   addToy ? formContainer.style.display = "block" : formContainer.style.display = "none";
 });
 
+toyForm.addEventListener("submit", handlePostToy)
 
+document.addEventListener("click", (e) => {
+  if (e.target.className === "like-btn") {
+    handleLikeButton(e);
+  }
+});
