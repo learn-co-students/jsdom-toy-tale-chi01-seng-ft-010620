@@ -34,19 +34,31 @@
       "id": 6,
       "name": "Bo Peep",
       "image": "http://4.bp.blogspot.com/_OZHbJ8c71OM/Sog43CMFX2I/AAAAAAAADEs/0AKX0XslD4g/s400/bo.png",
-      "likes": 3
+      "likes": 11
     },
     {
       "id": 7,
       "name": "Hamm",
       "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
-      "likes": 15
+      "likes": 18
     },
     {
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": 12
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
+      "id": 9,
+      "likes": null
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
+      "likes": 25,
+      "id": 10
     }
   ]
 }

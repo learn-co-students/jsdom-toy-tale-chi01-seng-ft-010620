@@ -42,7 +42,8 @@ const handlePostToy = e => {
   e.preventDefault()
   const formData = {
     name: e.target["name"].value,
-    image: e.target["image"].value
+    image: e.target["image"].value,
+    likes: 0
   }
   e.target.reset();
 
