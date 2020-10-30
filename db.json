@@ -4,25 +4,25 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 18
+      "likes": 21
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 16
+      "likes": 17
     },
     {
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 8
+      "likes": 13
     },
     {
       "id": 4,
       "name": "Slinky Dog",
       "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
-      "likes": 4
+      "likes": 8
     },
     {
       "id": 5,
@@ -40,7 +40,7 @@
       "id": 7,
       "name": "Hamm",
       "image": "https://cdn140.picsart.com/244090226021212.png?r1024x1024",
-      "likes": 18
+      "likes": 19
     },
     {
       "id": 8,
@@ -52,13 +52,31 @@
       "name": "Wheezy",
       "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
       "id": 9,
-      "likes": null
+      "likes": 9
     },
     {
       "name": "Wheezy",
       "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
-      "likes": 25,
+      "likes": 12,
       "id": 10
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
+      "likes": 6,
+      "id": 11
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
+      "likes": 0,
+      "id": 12
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
+      "likes": 5,
+      "id": 13
     }
   ]
 }
