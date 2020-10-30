@@ -1,4 +1,4 @@
-console.log("Uncomment for ES6 functions version");
+console.log("Uncomment lines 3-end for ES6 functions version");
 
 // // NOTE that I do not use the DOMContentLoaded Event listener
 // // I chose instead to use the keyword "defer" in the script tag

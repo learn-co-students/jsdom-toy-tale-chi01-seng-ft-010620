@@ -47,36 +47,6 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": 12
-    },
-    {
-      "name": "Wheezy",
-      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
-      "id": 9,
-      "likes": 9
-    },
-    {
-      "name": "Wheezy",
-      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
-      "likes": 12,
-      "id": 10
-    },
-    {
-      "name": "Wheezy",
-      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
-      "likes": 6,
-      "id": 11
-    },
-    {
-      "name": "Wheezy",
-      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
-      "likes": 0,
-      "id": 12
-    },
-    {
-      "name": "Wheezy",
-      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
-      "likes": 5,
-      "id": 13
     }
   ]
 }

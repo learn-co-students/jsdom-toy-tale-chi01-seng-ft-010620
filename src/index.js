@@ -1,3 +1,5 @@
+console.log("uncomment lines 3-end for the ES5 syntax version")
+
 // NOTE that I do not use the DOMContentLoaded Event listener
 // I chose instead to use the keyword "defer" in the script tag
 // "defer" waits for the DOM to load before running the script file
@@ -26,7 +28,7 @@ const toyContainer = document.getElementById("toy-collection");
 
 // this function takes in an argument of a single toy
 // and renders the single toy
-const renderIndividualToy = toy => {
+function renderIndividualToy(toy){
   // save a variable with the toy's likes in a string
   let likeValue = `${toy.likes}`;
   // if the likeValue is "1", the value of ternary is "Like"
@@ -43,11 +45,11 @@ const renderIndividualToy = toy => {
 
 // accept an argument of an array of toys
 // and render all of those toys
-const renderToys = toysArray => {
+function renderToys(toysArray){
   // reset the innerHTML of the toys container
   toyContainer.innerHTML = ``;
   // iterate over each of the toys in the toys array
-  toysArray.forEach(toy => {
+  toysArray.forEach(function(toy){
     // call the renderIndividualToy function
     // pass the argument of an individual toy to the function
     renderIndividualToy(toy);
@@ -55,15 +57,17 @@ const renderToys = toysArray => {
 }
 
 // fetch all the toys from the server
-const fetchToys = () => {
+function fetchToys(){
   fetch(toysEndpoint)
-    .then(resp => resp.json())
-    .then(toysArray => {
+    .then(function(resp){
+      return resp.json()
+    })
+    .then(function(toysArray){
       // when we get the data back, we will call that toysArray
       // call the renderToys function with an argument of the toysArray
       renderToys(toysArray);
     })
-    .catch(err => {
+    .catch(function(err){
       // if an error message comes back from the server
       // render that error in the console
       console.log(err);
@@ -72,7 +76,7 @@ const fetchToys = () => {
 
 // callback function that runs when the submit action fires
 // take in an event as an argument
-const handlePostToy = e => {
+function handlePostToy(e){
   // prevent the default action of the form
   e.preventDefault();
   // assemble an object with the data from the form
@@ -105,20 +109,24 @@ const handlePostToy = e => {
   // we are making a POST fetch request
   // send the request object as a second argument to fetch
   fetch(toysEndpoint, reqObj)
-    .then(resp => resp.json())
-    .then(individualToy => {
+    .then(function(resp){
+      return resp.json();
+    })
+    .then(function(individualToy){
       // the response we receive is 1 toy object
       // the toy we just created
       // call the renderIndividualToy function
       // and pass in the new toy as an argument
       renderIndividualToy(individualToy);
     })
-    .catch(err => console.log(err))
+    .catch(function(err){
+      console.log(err);
+    })
 }
 
 // the function for handling the like button functionality
 // this function is called by the click event listener
-const handleLikeButton = e => {
+function handleLikeButton(e){
   // create a variable to store the toys ID
   // we have access to the toy's ID from the card's attribute of data-id
   const toyId = e.target.parentElement.dataset.id;
@@ -146,13 +154,17 @@ const handleLikeButton = e => {
   // note that a patch request needs to go to "toys/:id"
   // we have access to the toy's ID to append to the URL
   fetch(toysEndpoint + `/${toyId}`, reqObj)
-    .then(resp => resp.json())
-    .then(data => {
+    .then(function(resp){
+      return resp.json();
+    })
+    .then(function(data){
       console.log(data);
       // invoke the fetchToys function to rerender all the toys
       fetchToys();
     })
-    .catch(err => console.log(err))
+    .catch(function(err){
+      console.log(err);
+    })
 
 }
 
@@ -170,7 +182,7 @@ fetchToys();
 // --------------------EVENT LISTENERS---------------------------------
 
 // listen for when a user clicks the addBtn element
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", function(){
   // update the value of addToy to the opposite boolean value
   // if it starts out false, it is set to true
   addToy = !addToy;
@@ -186,7 +198,7 @@ toyForm.addEventListener("submit", handlePostToy);
 
 
 // listen for when the user clicks anywhere on the page
-document.addEventListener("click", (e) => {
+document.addEventListener("click", function(e){
   // if the node they clicked has a class="like-btn" attribute
   if (e.target.className === "like-btn") {
     // call the handleLikeButton function and pass in the event as an argument
