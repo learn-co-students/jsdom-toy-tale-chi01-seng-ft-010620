@@ -47,6 +47,12 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": 2
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://static.wikia.nocookie.net/pixar/images/d/d4/Wheezy_002.jpg/revision/latest/top-crop/width/220/height/220?cb=20181130163949",
+      "likes": 2,
+      "id": 9
     }
   ]
 }
